@@ -25,6 +25,7 @@ RUN apt-get update && apt-get install -y \
 # Install Playwright and its dependencies
 RUN pip install playwright
 RUN playwright install
+RUN playwright install-deps
 
 # Install other Python dependencies
 COPY requirements.txt .
