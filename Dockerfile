@@ -17,8 +17,8 @@ RUN apt-get update && apt-get install -y \
     libcairo2 \
     libasound2 \
     libdrm2 \                         
-║   libxfixes3 \                                  
-║   libgbm1  \
+    libxfixes3 \                                  
+    libgbm1  \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
