@@ -16,11 +16,15 @@ RUN apt-get update && apt-get install -y \
     libpango-1.0-0 \
     libcairo2 \
     libasound2 \
+    libdrm2 \                  # Adding this
+    libxfixes3 \               # Adding this
+    libgbm1 \                  # Adding this
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
 # Install Playwright and its dependencies
 RUN pip install playwright
+RUN playwright install-deps     # Adding this command
 RUN playwright install
 
 # Install other Python dependencies
