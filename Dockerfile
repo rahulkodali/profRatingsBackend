@@ -22,7 +22,7 @@ RUN apt-get update && \
 
 # Install Python dependencies
 COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt && playwright install
+RUN pip install --no-cache-dir -r requirements.txt && playwright install  && playwright install-deps
 
 # Copy the rest of the application code
 COPY . .
