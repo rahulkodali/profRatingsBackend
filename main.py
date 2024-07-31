@@ -14,7 +14,7 @@ app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": "*"}})  # Enable CORS for all routes
 
 # Set up logging
-logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(name)s - %(levellevel)s - %(message)s')
+logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(name)s - %(level)s - %(message)s')
 
 os.environ['GRPC_VERBOSITY'] = 'ERROR'
 os.environ['GRPC_TRACE'] = ''
