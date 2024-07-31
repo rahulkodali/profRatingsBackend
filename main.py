@@ -176,6 +176,12 @@ import re
 
 import re
 
+import re
+
+@app.route('/')
+def home():
+    return "Welcome to the Flask App!", 200
+
 @app.route('/api/summary', methods=['POST'])
 def get_summary():
     try:
