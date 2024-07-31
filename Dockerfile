@@ -22,10 +22,13 @@ RUN apt-get update && \
 
 # Install Python dependencies
 COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt && playwright install  && playwright install-deps
+RUN pip install --no-cache-dir -r requirements.txt && playwright install && playwright install-deps
 
 # Copy the rest of the application code
 COPY . .
 
-# Command to run your application
-CMD ["python", "main.py"]
+# Expose the port
+EXPOSE 5001
+
+# Run the application
+CMD ["gunicorn", "--bind", "0.0.0.0:5001", "main:app"]
