@@ -39,5 +39,5 @@ WORKDIR /app
 EXPOSE 5001
 
 # Command to run the application
-CMD ["gunicorn", "--worker-class=gevent", "--worker-connections=100", "--workers=1", "-b", "0.0.0.0:5001", "main:app"]
+CMD ["gunicorn", "--worker-class=gevent", "--worker-connections=400", "--workers=4", "-b", "0.0.0.0:5001", "main:app"]
 

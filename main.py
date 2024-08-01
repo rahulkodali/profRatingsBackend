@@ -93,14 +93,14 @@ async def scrape_reviews(url):
             browser = await p.chromium.launch(headless=True)
             page = await browser.new_page()
             await page.set_viewport_size({"width": 800, "height": 3200})
-            await page.goto(url, timeout=60000)  # Increased timeout
+            await page.goto(url, timeout=240000)  # Increased timeout
             logging.debug(f"Page loaded: {url}")
 
             await close_overlays(page)  # Close any overlay modals
 
             while True:
                 try:
-                    await page.wait_for_selector(".glImpo", timeout=10000)
+                    await page.wait_for_selector(".glImpo", timeout=20000)
                     more = await page.query_selector(".glImpo")
                     if more is None:
                         logging.debug("No 'more' button found")
