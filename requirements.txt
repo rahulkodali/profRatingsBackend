@@ -36,7 +36,6 @@ pydantic==2.8.2
 pydantic_core==2.20.1
 pyee==11.1.0
 pyparsing==3.1.2
-pyppeteer==2.0.0
 requests==2.32.3
 rsa==4.9
 tqdm==4.66.4

@@ -32,7 +32,7 @@ async def urlBuilder(name):
             browser = await p.chromium.launch(headless=True)
             page = await browser.new_page()
             await page.set_viewport_size({"width": 800, "height": 3200})
-            await page.goto(curr, timeout=80000)  # Increased timeout
+            await page.goto(curr, timeout=120000)  # Increased timeout
             logging.debug(f"Page loaded: {curr}")
             
             try:
