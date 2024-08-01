@@ -29,7 +29,7 @@ async def urlBuilder(name):
         logging.debug(f"Navigating to URL: {curr}")
         
         async with async_playwright() as p:
-            browser = await p.chromium.launch(headless=True)
+            browser = await p.chromium.launch(headless=True, args=['--no-sandbox', '--disable-setuid-sandbox'])
             page = await browser.new_page()
             await page.set_viewport_size({"width": 800, "height": 3200})
             await page.goto(curr, timeout=120000)  # Increased timeout
@@ -90,7 +90,7 @@ async def scrape_reviews(url):
         revs = []
         
         async with async_playwright() as p:
-            browser = await p.chromium.launch(headless=True)
+            browser = await p.chromium.launch(headless=True, args=['--no-sandbox', '--disable-setuid-sandbox'])
             page = await browser.new_page()
             await page.set_viewport_size({"width": 800, "height": 3200})
             await page.goto(url, timeout=240000)  # Increased timeout
